@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>American Dream Guide | Ultimate Shopping, Dining & Attraction Planner</title>
+  <meta name="description" content="The smartest independent directory and interactive wayfinding planner for the American Dream Mall. Locate 150+ stores, dining, attractions, and optimal parking decks.">
+  <link rel="canonical" href="https://americandreamguide.com/">
+  
+  <!-- SEO JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://americandreamguide.com/#website",
+        "url": "https://americandreamguide.com/",
+        "name": "American Dream Digital Guide",
+        "description": "Interactive directory, dynamic planner, and parking advisor for the American Dream Mall complex.",
+        "publisher": {
+          "@id": "https://americandreamguide.com/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://americandreamguide.com/#organization",
+        "name": "American Dream Digital Guide",
+        "url": "https://americandreamguide.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://americandreamguide.com/assets/favicon.png"
+        },
+        "email": "support@americandreamguide.com"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Prevent dark mode flash -->
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <style>
+    /* Styling overrides, scrollbars, and fine polishing */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+    body {
+      scroll-behavior: smooth;
+    }
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+
+  <!-- Google Analytics Placeholder (Optional for user deployment) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-250">
+
+  <!-- 1. ALERT BANNER -->
+  <div class="bg-gradient-to-r from-blue-700 via-indigo-700 to-violet-800 text-white text-center py-2 px-4 text-xs font-bold font-mono tracking-wider shadow-sm flex items-center justify-center gap-2">
+    <span>🅿️ PARKING ALERT: Deck B & C offer climate-controlled corridors. Enjoy $5 Flat rate all day!</span>
+  </div>
+
+  <!-- 2. STICKY GLASS HEADER -->
+  <header class="sticky top-0 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-900 transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo Area -->
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-display font-bold text-xl shadow-md shadow-indigo-200 dark:shadow-none group-hover:scale-105 transition-all">
+          A
+        </div>
+        <div>
+          <h1 class="font-display font-bold text-base sm:text-lg text-slate-905 dark:text-white leading-none">
+            American Dream
+          </h1>
+          <span class="text-[10px] font-mono tracking-widest text-indigo-650 dark:text-indigo-400 font-bold uppercase">
+            INDDEPENDENT WAYFINDER
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation & Controls -->
+      <div class="flex items-center gap-4 sm:gap-6">
+        <nav class="hidden md:flex items-center gap-2">
+          <a href="index.html" class="px-3.5 py-2 text-xs font-bold rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white transition-all">
+            Planner
+          </a>
+          <a href="about.html" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+            About Us
+          </a>
+          <a href="contact.html" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+            Contact
+          </a>
+          <a href="terms.html" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+            Terms
+          </a>
+          <a href="privacy.html" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+            Privacy
+          </a>
+        </nav>
+
+        <span class="h-6 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></span>
+
+        <!-- Dark Mode Toggle -->
+        <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-600 dark:text-slate-350 transition-all cursor-pointer shadow-xs" title="Toggle Theme">
+          <i data-lucide="moon" class="w-4 h-4 dark:hidden text-indigo-600"></i>
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+        </button>
+
+        <!-- Mobile Menu Trigger Drawer -->
+        <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-600 dark:text-slate-350 transition-all cursor-pointer">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Body -->
+    <div id="mobile-menu-drawer" class="hidden md:hidden border-t border-slate-200 dark:border-slate-900 bg-white dark:bg-slate-950 p-4 space-y-2">
+      <a href="index.html" class="block px-4 py-2 text-xs font-bold text-slate-900 dark:text-white bg-slate-50 dark:bg-slate-900 rounded-xl">Planner</a>
+      <a href="about.html" class="block px-4 py-2 text-xs font-medium text-slate-600 dark:text-slate-400 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900">About Us</a>
+      <a href="contact.html" class="block px-4 py-2 text-xs font-medium text-slate-600 dark:text-slate-400 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900">Contact Us</a>
+      <a href="terms.html" class="block px-4 py-2 text-xs font-medium text-slate-600 dark:text-slate-400 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900">Terms & Conditions</a>
+      <a href="privacy.html" class="block px-4 py-2 text-xs font-medium text-slate-600 dark:text-slate-400 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900">Privacy Policy</a>
+    </div>
+  </header>
+
+  <!-- 3. HERO SECTION -->
+  <section class="relative bg-white dark:bg-slate-900/45 border-b border-slate-200 dark:border-slate-900 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden transition-colors duration-200">
+    <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+      <div class="absolute top-0 left-0 right-0 h-full bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#334155_1px,transparent_1px),linear-gradient(to_bottom,#334155_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center space-y-4">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 text-[10px] font-extrabold tracking-wider uppercase rounded-full border border-blue-100 dark:border-blue-900/40">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-blue-500 fill-blue-500/20 animate-pulse"></i> Wayfinding Schema Algorithm Integrated
+      </span>
+
+      <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white leading-none tracking-tight">
+        American Dream Mall <br/>
+        <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">
+          Directory &amp; Navigation Platform
+        </span>
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-xl mx-auto leading-relaxed">
+        The ultimate independent trip advisor. Use physical level matrices, parking calculations, and quick coordinates filters to craft perfect visit itineraries easily.
+      </p>
+    </div>
+  </section>
+
+  <!-- 4. CORE TABS & FILTER BAR -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 w-full">
+    <div class="flex flex-col gap-6">
+      
+      <!-- Tabs Selector List -->
+      <div class="flex flex-wrap border-b border-slate-200 dark:border-slate-800 gap-1 sm:gap-2">
+        <button id="tab-stores" class="tab-btn px-4 py-3 text-xs sm:text-sm font-extrabold flex items-center gap-2 border-b-2 border-indigo-600 text-indigo-600 dark:text-indigo-400" onclick="switchTab('stores')">
+          <i data-lucide="store" class="w-4 h-4"></i> Retail Directories
+        </button>
+        <button id="tab-restaurants" class="tab-btn px-4 py-3 text-xs sm:text-sm font-bold flex items-center gap-2 border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-all" onclick="switchTab('restaurants')">
+          <i data-lucide="utensils" class="w-4 h-4"></i> Dining &amp; Cafes
+        </button>
+        <button id="tab-attractions" class="tab-btn px-4 py-3 text-xs sm:text-sm font-bold flex items-center gap-2 border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-all" onclick="switchTab('attractions')">
+          <i data-lucide="ticket" class="w-4 h-4"></i> Parks &amp; Attractions
+        </button>
+        <button id="tab-saved" class="tab-btn px-4 py-3 text-xs sm:text-sm font-bold flex items-center gap-2 border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-rose-500 dark:hover:text-rose-400 transition-all" onclick="switchTab('saved')">
+          <i data-lucide="bookmark" class="w-4 h-4 text-rose-500"></i> Saved Map Matrix <span id="saved-badge" class="bg-rose-100 text-rose-700 dark:bg-rose-950/40 dark:text-rose-400 text-[10px] font-black px-1.5 py-0.5 rounded-full ring-1 ring-rose-200/50">0</span>
+        </button>
+      </div>
+
+      <!-- Live Search & Filtering Panel (hidden for 'saved' and 'attractions') -->
+      <div id="filter-wrapper" class="bg-white dark:bg-slate-900 border border-slate-205 dark:border-slate-850 p-4 rounded-3xl shadow-xs transition-all flex flex-col md:flex-row gap-3">
+        
+        <!-- Search bar input -->
+        <div class="relative flex-grow">
+          <i data-lucide="search" class="absolute left-3.5 top-3 w-4 h-4 text-slate-400 pointer-events-none"></i>
+          <input type="text" id="search-input" onkeyup="executeSearchAndFilters()" placeholder="Search directory by brands, tags or products..." class="w-full pl-10 pr-4 py-2.5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:border-indigo-550 transition-colors">
+        </div>
+
+        <!-- Dropdown filters -->
+        <div class="flex flex-wrap md:flex-nowrap gap-2">
+          <!-- Category Selector -->
+          <select id="filter-category" onchange="executeSearchAndFilters()" class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-350 border border-slate-200 dark:border-slate-800 text-xs font-bold px-3 py-2.5 rounded-2xl focus:outline-none cursor-pointer">
+            <option value="">All Primary Categories</option>
+            <!-- Dynamic Category values populated by JS -->
+          </select>
+
+          <!-- Floor Proximity Modifier -->
+          <select id="filter-floor" onchange="executeSearchAndFilters()" class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-350 border border-slate-200 dark:border-slate-800 text-xs font-bold px-3 py-2.5 rounded-2xl focus:outline-none cursor-pointer">
+            <option value="">All Building Levels</option>
+            <option value="1">Level 1 (Ground Arcade)</option>
+            <option value="2">Level 2 (Fashion Promenade)</option>
+            <option value="3">Level 3 (Culinary Deck)</option>
+          </select>
+
+          <!-- Parking Hub Alignment -->
+          <select id="filter-parking" onchange="executeSearchAndFilters()" class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-350 border border-slate-200 dark:border-slate-800 text-xs font-bold px-3 py-2.5 rounded-2xl focus:outline-none cursor-pointer">
+            <option value="">All Parking Decks</option>
+            <option value="deck_a">Deck A (East Lobby)</option>
+            <option value="deck_b">Deck B (Family Express)</option>
+            <option value="deck_c">Deck C (North Rotunda)</option>
+            <option value="deck_d">Deck D (Sports Bypass)</option>
+            <option value="deck_g">Deck G (Outdoor Direct)</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 5. DIRECTIVITY CONTENT RENDER -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    
+    <!-- STORES VIEW -->
+    <div id="view-stores" class="tab-view animate-fade-in">
+      <div id="stores-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered Dynamically by JS -->
+      </div>
+    </div>
+
+    <!-- RESTAURANTS VIEW -->
+    <div id="view-restaurants" class="tab-view hidden animate-fade-in">
+      <div id="restaurants-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered Dynamically by JS -->
+      </div>
+    </div>
+
+    <!-- ATTRACTIONS VIEW -->
+    <div id="view-attractions" class="tab-view hidden animate-fade-in">
+      <!-- High contrast Attractions Hero -->
+      <section class="mb-10 text-center max-w-2xl mx-auto space-y-2">
+        <h3 class="font-display font-bold text-2xl text-slate-900 dark:text-white leading-tight">World-Class Theme Parks &amp; Sports Complex</h3>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">American Dream operates some of the largest indoor theme ventures global-wide. Review essential targets and entry zones.</p>
+      </section>
+      
+      <div id="attractions-grid" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Left details list -->
+        <div class="lg:col-span-8 space-y-6" id="attractions-container">
+          <!-- Rendered Dynamically -->
+        </div>
+
+        <!-- Right Vitals & hours column -->
+        <div class="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
+          <div class="bg-indigo-50/50 dark:bg-slate-900 border border-indigo-200/50 dark:border-slate-800 p-5 rounded-2xl space-y-4 shadow-3xs">
+            <h4 class="font-extrabold text-indigo-900 dark:text-indigo-400 text-xs tracking-widest uppercase font-mono">Operations &amp; Vitals</h4>
+            
+            <div class="space-y-4 text-xs">
+              <div class="flex justify-between border-b border-indigo-100/30 pb-2">
+                <span class="text-slate-500 dark:text-slate-400">Total Play Acreage:</span>
+                <span class="font-bold text-slate-800 dark:text-slate-200">12.5 Indoor Acres</span>
+              </div>
+              <div class="flex justify-between border-b border-indigo-100/30 pb-2">
+                <span class="text-slate-500 dark:text-slate-400">Quiet Hours:</span>
+                <span class="font-bold text-slate-800 dark:text-slate-200">Mon-Wednesday Morning</span>
+              </div>
+              <div class="flex justify-between border-b border-indigo-100/30 pb-2">
+                <span class="text-slate-500 dark:text-slate-400">Water Temp (DreamWorks):</span>
+                <span class="font-bold text-emerald-600 dark:text-emerald-400">Constant 81° F (27° C)</span>
+              </div>
+              <div class="flex justify-between border-b border-indigo-100/30 pb-2">
+                <span class="text-slate-500 dark:text-slate-400">Snow Guarantee (Big Snow):</span>
+                <span class="font-bold text-blue-500">Real Alpine Powder Dry Snow</span>
+              </div>
+            </div>
+
+            <div class="p-3 bg-amber-50 dark:bg-slate-950 rounded-xl border border-amber-200/60 dark:border-amber-900/30 text-[11px] text-amber-900 dark:text-amber-400 leading-relaxed text-justify">
+              <strong>💡 QUICK VISIT TIP:</strong> Always coordinate attraction tickets prior database visitation. Most theme entries sell out 72-hours beforehand on major national holidays.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAVED MATRIX VIEW -->
+    <div id="view-saved" class="tab-view hidden animate-fade-in">
+      <div id="saved-matrix-panel" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xs">
+        
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8 pb-4 border-b border-slate-200 dark:border-slate-800">
+          <div>
+            <span class="text-[10px] font-extrabold text-indigo-650 dark:text-indigo-400 uppercase tracking-widest block mb-1">Your Curated Selections</span>
+            <h3 class="text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2 font-display">
+              <i data-lucide="bookmark" class="w-6 h-6 text-rose-500 fill-rose-500/10"></i> Saved Directory Matrix
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+              Evaluate optimal parking corridors and floor metrics for your specifically saved mall locations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Relational Parking Advisor Banner -->
+        <div id="saved-parking-advisor" class="mb-8 bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-200/50 dark:border-indigo-900/40 p-5 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4 transition-all">
+          <div class="flex items-center gap-3">
+            <span class="w-11 h-11 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-xl shrink-0">
+              🅿️
+            </span>
+            <div>
+              <h4 class="font-extrabold text-slate-900 dark:text-indigo-305 text-sm">Optimal Wayfinding Solution</h4>
+              <p class="text-xs text-slate-655 dark:text-slate-300 max-w-xl leading-relaxed mt-0.5">
+                Based on your physical collection, we calculated the most efficient parking zone: <strong id="calculated-parking-deck" class="text-indigo-600 dark:text-indigo-400 font-extrabold">Deck B</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Saved matrix grids split -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="saved-lists-container">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Saved empty state placeholder -->
+        <div id="saved-empty-state" class="hidden text-center py-20 bg-slate-50/50 dark:bg-slate-950/40 border border-dashed border-slate-200 dark:border-slate-800 rounded-2xl max-w-md mx-auto">
+          <i data-lucide="bookmark-plus" class="w-12 h-12 text-slate-355 dark:text-slate-600 mx-auto mb-3"></i>
+          <h4 class="font-bold text-slate-705 dark:text-slate-200 text-base">Your saved matrix is empty</h4>
+          <p class="text-xs text-slate-400 dark:text-slate-500 max-w-xs mx-auto mt-1 leading-relaxed">
+            Go back to the Retail or Dining tabs and bookmark locations to automatically build your customized map vector deck coordinates.
+          </p>
+          <div class="mt-5 flex justify-center gap-2">
+            <button onclick="switchTab('stores')" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition-all cursor-pointer">
+              Select Retail
+            </button>
+            <button onclick="switchTab('restaurants')" class="bg-slate-100 hover:bg-slate-150 text-slate-700 dark:bg-slate-800 dark:text-slate-200 text-xs font-bold px-4 py-2 rounded-xl transition-all cursor-pointer">
+              Select Dining
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- 6. HIGH-COMPLIANCE HUMAN EXPERT FAQ SECTION -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 dark:border-slate-900 w-full animate-fade-in">
+    <div class="text-center mb-8">
+      <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 font-mono tracking-widest uppercase block mb-1">Expert Field Intelligence</span>
+      <h3 class="font-display font-black text-2xl sm:text-3xl text-slate-900 dark:text-white leading-tight">American Dream Visitor FAQs</h3>
+      <div class="w-12 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto mt-3 rounded"></div>
+    </div>
+
+    <!-- Accordion Matrix -->
+    <div class="space-y-4">
+      
+      <!-- FAQ 1 -->
+      <div class="border border-slate-200 dark:border-slate-850 rounded-2xl bg-white dark:bg-slate-900 overflow-hidden shadow-3xs transition-colors">
+        <button class="w-full text-left px-5 py-4 focus:outline-none flex justify-between items-center cursor-pointer" onclick="toggleAccordion('faq-1')">
+          <span class="font-bold text-sm sm:text-base text-slate-900 dark:text-white pr-4">How does the independent American Dream parking payment structure function?</span>
+          <i data-lucide="chevron-down" id="faq-1-icon" class="w-5 h-5 shrink-0 text-slate-400 transition-transform"></i>
+        </button>
+        <div id="faq-1" class="hidden px-5 pb-5">
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed text-justify">
+            American Dream offers highly streamlined parking. The first 30 minutes are 100% free; after that, a single flat rate of <strong>$5.00 for the entire day</strong> applies. Parking tickets are generated at physical gates on entrance and must be processed inside automatic kiosks located at primary lobbies, or online via license cameras on departure.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="border border-slate-200 dark:border-slate-850 rounded-2xl bg-white dark:bg-slate-900 overflow-hidden shadow-3xs transition-colors">
+        <button class="w-full text-left px-5 py-4 focus:outline-none flex justify-between items-center cursor-pointer" onclick="toggleAccordion('faq-2')">
+          <span class="font-bold text-sm sm:text-base text-slate-900 dark:text-white pr-4">Which parking deck provides the most efficient entrance into high-fashion wings?</span>
+          <i data-lucide="chevron-down" id="faq-2-icon" class="w-5 h-5 shrink-0 text-slate-400 transition-transform"></i>
+        </button>
+        <div id="faq-2" class="hidden px-5 pb-5">
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed text-justify">
+            For premium luxury shopping brands like Hermès, Saint Laurent, and Tiffany, <strong>Parking Deck C (North Rotunda)</strong> is strategically optimized. It connects travelers with climate-controlled pathways directly onto the upscale Level 1 avenues, saving up to 20 minutes of internal crosswalk exploration.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="border border-slate-200 dark:border-slate-850 rounded-2xl bg-white dark:bg-slate-900 overflow-hidden shadow-3xs transition-colors">
+        <button class="w-full text-left px-5 py-4 focus:outline-none flex justify-between items-center cursor-pointer" onclick="toggleAccordion('faq-3')">
+          <span class="font-bold text-sm sm:text-base text-slate-900 dark:text-white pr-4">Can mall visitors purchase ride passes directly inside theme parks on arrival?</span>
+          <i data-lucide="chevron-down" id="faq-3-icon" class="w-5 h-5 shrink-0 text-slate-400 transition-transform"></i>
+        </button>
+        <div id="faq-3" class="hidden px-5 pb-5">
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed text-justify">
+            Yes, tickets are purchasable at physical arrival terminals, though pre-booking is highly recommended. Weekend visitor capacities are capped rigorously, and pre-purchasing tickets online guarantees entrance during peak slots.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. EDITORIAL CONTENT FOOTER -->
+  <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 py-12 px-4 transition-colors duration-250">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+      
+      <!-- Col 1: Bio and Brand -->
+      <div class="md:col-span-5 space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-indigo-650 text-white flex items-center justify-center font-display font-black">A</div>
+          <span class="font-display font-bold text-base text-slate-900 dark:text-white">American Dream Digital Guide</span>
+        </div>
+        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed text-justify">
+          The smarter independent wayfinder and trip planner for American Dream Mall visitors. Curating floor coordinates, parking vital tips, and local dining arrays with pristine precision.
+        </p>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div class="md:col-span-3 space-y-3">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-400 font-mono">Directory Access</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-650 hover:underline">Interactive Planner</a></li>
+          <li><a href="about.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-650 hover:underline">Our Mission Roots</a></li>
+          <li><a href="contact.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-650 hover:underline">Support Desk</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Legals -->
+      <div class="md:col-span-4 space-y-3">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-400 font-mono">Legal Guidelines</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="terms.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-650 hover:underline">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-650 hover:underline">Privacy Policy (GPDR compliant)</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto border-t border-slate-100 dark:border-slate-900 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-405 dark:text-slate-500">
+      <p>&copy; 2026 American Dream Digital Guide. Authored independently. Independent travel publication.</p>
+      <div class="flex gap-4">
+        <span>Designed with Inter UI font</span>
+        <span>Mapped with Lucide Vectors</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 8. VISITATION DETAILS POPUP MODAL -->
+  <div id="details-modal" class="fixed inset-0 z-50 bg-slate-950/50 backdrop-blur-xs flex items-center justify-center p-4 hidden">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl animate-fade-in">
+      
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-slate-150 dark:border-slate-800 flex justify-between items-start">
+        <div class="flex items-center gap-3">
+          <span id="modal-logo" class="w-11 h-11 rounded-xl bg-slate-100 dark:bg-slate-850 flex items-center justify-center text-xl shadow-inner leading-none">🏬</span>
+          <div>
+            <h4 id="modal-title" class="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-tight">Adidas Store</h4>
+            <span id="modal-subtitle" class="text-[10px] bg-indigo-50 dark:bg-indigo-950/40 text-indigo-650 dark:text-indigo-400 font-bold uppercase py-0.5 px-2 rounded-full mt-1 inline-block">Apparel</span>
+          </div>
+        </div>
+        <button onclick="closeModal()" class="p-1 rounded-lg border border-slate-200 dark:border-slate-850 text-slate-405 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-850 cursor-pointer">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-4 text-xs sm:text-sm">
+        <p id="modal-desc" class="text-slate-600 dark:text-slate-450 leading-relaxed text-justify">
+          No description available.
+        </p>
+
+        <!-- Dynamic Grid key vitals -->
+        <div class="grid grid-cols-2 gap-3 bg-slate-50 dark:bg-slate-955 p-4 rounded-2xl border border-slate-150 dark:border-slate-850">
+          <div>
+            <span class="text-[9px] uppercase font-bold tracking-wider text-slate-400 font-mono block">Terminal Level</span>
+            <span id="modal-location" class="font-extrabold text-slate-900 dark:text-white">Level 2, Zone Court D</span>
+          </div>
+          <div>
+            <span class="text-[9px] uppercase font-bold tracking-wider text-slate-400 font-mono block">Primary Parking</span>
+            <span id="modal-parking" class="font-extrabold text-indigo-600 dark:text-indigo-400">Deck D</span>
+          </div>
+          <div class="col-span-2 pt-2 border-t border-slate-200/50 dark:border-slate-800/50">
+            <span class="text-[9px] uppercase font-bold tracking-wider text-slate-400 font-mono block">Operation Hours</span>
+            <span id="modal-hours" class="font-bold text-slate-700 dark:text-slate-300">11:00 AM - 9:00 PM</span>
+          </div>
+        </div>
+
+        <!-- Custom Products/Features list -->
+        <div id="modal-features-container" class="space-y-1.5">
+          <span class="text-[10px] uppercase font-extrabold tracking-wider text-slate-440 font-mono">Specialized Ranges</span>
+          <div id="modal-features-list" class="flex flex-wrap gap-1.5">
+            <!-- Dynamic pills and tags -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-5 bg-slate-50 dark:bg-slate-950/50 border-t border-slate-150 dark:border-slate-800 flex justify-end gap-2">
+        <button onclick="closeModal()" class="px-4 py-2 bg-slate-200 hover:bg-slate-250 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-xl transition-all cursor-pointer">
+          Close Window
+        </button>
+        <button id="modal-bookmark-btn" class="px-4.5 py-2 bg-indigo-600 hover:bg-indigo-705 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="bookmark" class="w-3.5 h-3.5"></i> Bookmark Element
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 9. JAVASCRIPT DIRECTORY CONTROLLER ENGINE -->
+  <script>
+    // CORE MALL DATASET ARRAY (Stores, Restaurants, Attractions, Parking Decks)
+    const STORES_LIST = [
+      {
+        id: "abercrombie-fitch",
+        name: "Abercrombie & Fitch",
+        category: "Apparel & Accessories",
+        floor: 1,
+        location: "Level 1, Court C",
+        parking: "deck_c",
+        deck_name: "Deck C",
+        logo: "👔",
+        rating: 4.3,
+        reviews: 85,
+        hours: "11:00 AM - 9:00 PM",
+        products: ["Premium Denim", "Outerwear", "Graphic Tees", "Fragrances"],
+        desc: "Abercrombie & Fitch delivers stellar, modern-classic clothing styled with a comfortable contemporary look. Features full inventory arrays of tailoring styles and loungewear."
+      },
+      {
+        id: "adidas",
+        name: "Adidas Outlet",
+        category: "Sportswear & Footwear",
+        floor: 2,
+        location: "Level 2, Court D",
+        parking: "deck_d",
+        deck_name: "Deck D",
+        logo: "👟",
+        rating: 4.4,
+        reviews: 122,
+        hours: "11:00 AM - 9:00 PM",
+        products: ["Ultraboost Shoes", "Soccer Cleats", "Tracksuits", "Activewear"],
+        desc: "The Adidas performance flagship displays advanced athletic wear systems, running apparel, and street-style originals tailored for high-energy active sports."
+      },
+      {
+        id: "apple-mall",
+        name: "Apple Store",
+        category: "Electronics",
+        floor: 2,
+        location: "Level 2, Court A",
+        parking: "deck_a",
+        deck_name: "Deck A",
+        logo: "🍎",
+        rating: 4.6,
+        reviews: 210,
+        hours: "11:00 AM - 9:00 PM",
+        products: ["iPhone Pro Series", "MacBook Air/Pro", "iPad", "Apple Watch Accessories"],
+        desc: "Experiential Apple storefront carrying cutting-edge hardware ecosystems, personal design assistance curves, and comprehensive technician repair hubs."
+      },
+      {
+        id: "sephora-mall",
+        name: "Sephora Flagship",
+        category: "Beauty & Cosmetics",
+        floor: 1,
+        location: "Level 1, Court B",
+        parking: "deck_b",
+        deck_name: "Deck B",
+        logo: "💄",
+        rating: 4.5,
+        reviews: 95,
+        hours: "11:00 AM - 9:00 PM",
+        products: ["Vibrant Lipsticks", "Complex Skincare Serum", "Premium Haircare", "Gift Sets"],
+        desc: "The massive Sephora coordinates showcase top-tier labels, clean beauty products, custom consultations, and signature cosmetic collections."
+      },
+      {
+        id: "h-and-m",
+        name: "H&M Mega Design",
+        category: "Apparel & Accessories",
+        floor: 1,
+        location: "Level 1, Court C",
+        parking: "deck_c",
+        deck_name: "Deck C",
+        logo: "👔",
+        rating: 4.2,
+        reviews: 135,
+        hours: "11:00 AM - 9:00 PM",
+        products: ["Seasonal Casualwear", "Kids Outfits", "Recycled Fabric Liners", "Shoes"],
+        desc: "Providing high-fashion essentials for women, men, and children, H&M is the go-to pocket for fast casual edits and durable seasonal designs."
+      },
+      {
+        id: "lego-creative",
+        name: "LEGOLAND Toy Store",
+        category: "Kids & Toys",
+        floor: 1,
+        location: "Level 1, Court C",
+        parking: "deck_c",
+        deck_name: "Deck C",
+        logo: "🧱",
+        rating: 4.7,
+        reviews: 156,
+        hours: "11:00 AM - 9:00 PM",
+        products: ["Star Wars LEGO", "Hogwarts Castle Kits", "Technic Car Sets", "Brick Boxes"],
+        desc: "The ultimate local specialty stop. Explore gigantic model towers, construct custom builder bags, and access hard-to-find collector editions."
+      },
+      {
+        id: "zara-american",
+        name: "Zara International",
+        category: "Apparel & Accessories",
+        floor: 2,
+        location: "Level 2, Court A",
+        parking: "deck_a",
+        deck_name: "Deck A",
+        logo: "👔",
+        rating: 4.4,
+        reviews: 180,
+        hours: "11:00 AM - 10:00 PM",
+        products: ["Upscale Outerwear", "Drape Suits", "Premium Leather Boots", "Accessories"],
+        desc: "Elegant modern fashion designs representing international boutique lines. High-contrast displays and dynamic weekly inventory updates."
+      },
+      {
+        id: "nike-live",
+        name: "Nike Rise Concept",
+        category: "Sportswear & Footwear",
+        floor: 1,
+        location: "Level 1, Court D",
+        parking: "deck_d",
+        deck_name: "Deck D",
+        logo: "✔️",
+        rating: 4.6,
+        reviews: 280,
+        hours: "11:00 AM - 10:00 PM",
+        products: ["Pegasus Running Shoes", "Jordan Retro Sneakers", "Dry-Fit Training Shirts"],
+        desc: "State-of-the-art interactive retail offering localized fitness tracking sync, custom print shops, and expert gait-analysis tunnels."
+      },
+      {
+        id: "lulumon-wellness",
+        name: "Lululemon Athletica",
+        category: "Sportswear & Footwear",
+        floor: 2,
+        location: "Level 2, Court B",
+        parking: "deck_b",
+        deck_name: "Deck B",
+        logo: "🧘",
+        rating: 4.5,
+        reviews: 78,
+        hours: "11:00 AM - 9:00 PM",
+        products: ["Align Yoga Pants", "Run-Swift Breathable Shirts", "Insulated Cold Flasks"],
+        desc: "Technical activewear designed for yoga, running, and outdoor training. Features high-quality stretch fibers and active comfort shapes."
+      },
+      {
+        id: "tiffany-luxury",
+        name: "Tiffany & Co.",
+        category: "Beauty & Cosmetics",
+        floor: 1,
+        location: "Level 1, Court C",
+        parking: "deck_c",
+        deck_name: "Deck C",
+        logo: "💎",
+        rating: 4.8,
+        reviews: 62,
+        hours: "11:00 AM - 8:00 PM",
+        products: ["Platinum Engagement Rings", "Sterling Silver Necklaces", "Signature Blue Gift Sets"],
+        desc: "Historic upscale jeweler providing iconic customized jewelry boxes, sterling bands, and premium gemstone arrays inside the Luxury Wing."
+      }
+    ];
+
+    const RESTAURANTS_LIST = [
+      {
+        id: "cinnabon-sweet",
+        name: "Cinnabon Gourmet",
+        category: "Sweet Treats & Cafes",
+        floor: 1,
+        location: "Level 1, Court G",
+        parking: "deck_g",
+        deck_name: "Deck G",
+        logo: "🥮",
+        rating: 4.5,
+        reviews: 145,
+        hours: "11:00 AM - 9:00 PM",
+        products: ["Classic Cinnamon Roll", "Caramel Pecanbon", "Cold Brew Iced Coffee"],
+        desc: "Fresh, warm baked cinnamon cinnamon-layer rolls topped with trademark rich cream cheese frosting."
+      },
+      {
+        id: "starbucks-court-a",
+        name: "Starbucks Reserved",
+        category: "Sweet Treats & Cafes",
+        floor: 2,
+        location: "Level 2, Court A",
+        parking: "deck_a",
+        deck_name: "Deck A",
+        logo: "☕",
+        rating: 4.3,
+        reviews: 198,
+        hours: "11:00 AM - 10:00 PM",
+        products: ["Nitro Draft Cold Brew", "Iced Brown Sugar Espresso", "Caramel Macchiato"],
+        desc: "Top-tier premium reserved layout utilizing single-origin roasted beans, siphon-brew systems, and local fresh pastries."
+      },
+      {
+        id: "yard-house-dream",
+        name: "Yard House Restaurant",
+        category: "Casual & Family Dining",
+        floor: 3,
+        location: "Level 3, Court B",
+        parking: "deck_b",
+        deck_name: "Deck B",
+        logo: "🍺",
+        rating: 4.4,
+        reviews: 340,
+        hours: "11:00 AM - 11:30 PM",
+        products: ["Craft Cheeseburger", "Spicy Tuna Roll", "140+ Active Beer Taps", "Warm Pretzels"],
+        desc: "The ultimate modern gastropub. Spans a massive dining floor carrying extensive lists of local craft brewery drafts."
+      },
+      {
+        id: "real-pretzel-b",
+        name: "Wetzel's Pretzels",
+        category: "Sweet Treats & Cafes",
+        floor: 1,
+        location: "Level 1, Court B",
+        parking: "deck_b",
+        deck_name: "Deck B",
+        logo: "🥨",
+        rating: 4.2,
+        reviews: 54,
+        hours: "11:00 AM - 9:00 PM",
+        products: ["Butter Sin-Roll Pretzel", "Spicy Jalapeno Slices", "Ice-Cold Lemonade Mug"],
+        desc: "Fresh hand-rolled daily on-site, serving incredibly tasty buttered snacks alongside delicious lemonade refreshers."
+      },
+      {
+        id: "house-of-hotpot",
+        name: "Supreme Hotpot Matrix",
+        category: "Fine & Specialty Dining",
+        floor: 3,
+        location: "Level 3, Court C",
+        parking: "deck_c",
+        deck_name: "Deck C",
+        logo: "🍲",
+        rating: 4.6,
+        reviews: 112,
+        hours: "12:00 PM - 10:00 PM",
+        products: ["Hand-sliced Wagyu Ribeye", "Spicy Sichuan Soup Base", "Handmade Ramen Noodles"],
+        desc: "An incredible Chinese hotpot experience featuring interactive individual broth burners, modern custom sauce bars, and premium meat cuts."
+      }
+    ];
+
+    const ATTRACTIONS_LIST = [
+      {
+        id: "nickelodeon-universe",
+        name: "Nickelodeon Universe Theme Park",
+        location: "Level 1, Court A",
+        parking: "deck_a",
+        deck_name: "Deck A",
+        audience: "Families & High-Thrill Seekers",
+        logo: "🎢",
+        desc: "The Western Hemisphere's largest indoor theme park. Features record-breaking vertical drop coasters, colorful live character assemblies, and endless family fun spaces.",
+        vitals: "8.5 Indoor Acres, 35+ Active Rides"
+      },
+      {
+        id: "dreamworks-water-park",
+        name: "DreamWorks Water Park",
+        location: "Level 2, Court B",
+        parking: "deck_b",
+        deck_name: "Deck B",
+        audience: "Families, All Ages, Wave Seekers",
+        logo: "🌊",
+        desc: "Massive tropical indoor paradise housing a gigantic wave pool, adrenaline-pumping high sliders, and private premium rentable cabana spaces.",
+        vitals: "Constant 81° F Air temp, Huge multi-slide sets"
+      },
+      {
+        id: "big-snow-ski",
+        name: "Big SNOW American Dream",
+        location: "Level 1, Court G",
+        parking: "deck_g",
+        deck_name: "Deck G",
+        audience: "Snowboarders, Skiers, Winter Sports",
+        logo: "❄️",
+        desc: "North America's first indoor real alpine powder snow ski resort. Rent custom equipment, ride real quad chairs, and carve curves perfectly year-round.",
+        vitals: "Indoor temp kept at solid 28° F (-2° C)"
+      },
+      {
+        id: "sea-life-aquarium",
+        name: "SEA LIFE Aquarium",
+        location: "Level 1, Court A",
+        parking: "deck_a",
+        deck_name: "Deck A",
+        audience: "Curious Minds, Kids & Families",
+        logo: "🐠",
+        desc: "Underwater oasis containing an incredible 360-degree walk-through ocean tunnel, touch water tanks, and deep-sea preservation research exhibits.",
+        vitals: "Over 3,000 marine life forms"
+      }
+    ];
+
+    // STATE MANAGER
+    let CURRENT_TAB = 'stores';
+    let BOOKMARKED_STORES = JSON.parse(localStorage.getItem('bookmarked_stores') || '[]');
+    let BOOKMARKED_RESTAURANTS = JSON.parse(localStorage.getItem('bookmarked_restaurants') || '[]');
+
+    // THEME CONTROLLER
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+      }
+    });
+
+    // MOBILE DRAWER
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-menu-drawer');
+    mobileBtn.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('hidden');
+    });
+
+    // ACCORDION TOGGLER
+    function toggleAccordion(faqId) {
+      const panel = document.getElementById(faqId);
+      const icon = document.getElementById(faqId + '-icon');
+      panel.classList.toggle('hidden');
+      if (panel.classList.contains('hidden')) {
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // INITIALIZATION
+    window.addEventListener('DOMContentLoaded', () => {
+      populateFilterCategories();
+      executeSearchAndFilters();
+      renderAttractionsTab();
+      updateSavedBadgeCount();
+      lucide.createIcons();
+    });
+
+    // TAB SWITCHER
+    function switchTab(tabId) {
+      CURRENT_TAB = tabId;
+      
+      // Update Tab button style elements
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-indigo-600', 'text-indigo-650', 'dark:text-indigo-400');
+        btn.classList.add('border-transparent', 'text-slate-500', 'dark:text-slate-405');
+      });
+
+      const activeBtn = document.getElementById('tab-' + tabId);
+      activeBtn.classList.remove('border-transparent', 'text-slate-500', 'dark:text-slate-405');
+      activeBtn.classList.add('border-indigo-600', 'text-indigo-600', 'dark:text-indigo-400');
+
+      // Hide all content views
+      document.querySelectorAll('.tab-view').forEach(view => {
+        view.classList.add('hidden');
+      });
+
+      // Show selected content view
+      document.getElementById('view-' + tabId).classList.remove('hidden');
+
+      // Show/Hide search filters wrapping
+      const filterWrap = document.getElementById('filter-wrapper');
+      if (tabId === 'saved' || tabId === 'attractions') {
+        filterWrap.classList.add('hidden');
+      } else {
+        filterWrap.classList.remove('hidden');
+        resetFilters();
+      }
+
+      if (tabId === 'saved') {
+        renderSavedTab();
+      }
+    }
+
+    function resetFilters() {
+      document.getElementById('search-input').value = '';
+      document.getElementById('filter-category').value = '';
+      document.getElementById('filter-floor').value = '';
+      document.getElementById('filter-parking').value = '';
+      executeSearchAndFilters();
+    }
+
+    // CATEGORY DROPDOWN GENERATOR
+    function populateFilterCategories() {
+      const storeCats = [...new Set(STORES_LIST.map(item => item.category))];
+      const restCats = [...new Set(RESTAURANTS_LIST.map(item => item.category))];
+      
+      const select = document.getElementById('filter-category');
+      select.innerHTML = '<option value="">All Primary Categories</option>';
+      
+      // We will render categories based on the currently open view
+      const activeCats = CURRENT_TAB === 'restaurants' ? restCats : storeCats;
+      activeCats.forEach(cat => {
+        select.innerHTML += `<option value="${cat}">${cat}</option>`;
+      });
+    }
+
+    // SEARCH & FILTER COMPOSER ALGORITHM
+    function executeSearchAndFilters() {
+      const q = document.getElementById('search-input').value.toLowerCase().trim();
+      const cat = document.getElementById('filter-category').value;
+      const floor = document.getElementById('filter-floor').value;
+      const parking = document.getElementById('filter-parking').value;
+
+      if (CURRENT_TAB === 'stores') {
+        const filtered = STORES_LIST.filter(item => {
+          const matchQ = item.name.toLowerCase().includes(q) || 
+                         item.desc.toLowerCase().includes(q) || 
+                         item.products.some(p => p.toLowerCase().includes(q));
+          const matchCat = !cat || item.category === cat;
+          const matchFloor = !floor || item.floor == floor;
+          const matchParking = !parking || item.parking === parking;
+          return matchQ && matchCat && matchFloor && matchParking;
+        });
+        renderStores(filtered);
+      } else if (CURRENT_TAB === 'restaurants') {
+        const filtered = RESTAURANTS_LIST.filter(item => {
+          const matchQ = item.name.toLowerCase().includes(q) || 
+                         item.desc.toLowerCase().includes(q) || 
+                         item.products.some(p => p.toLowerCase().includes(q));
+          const matchCat = !cat || item.category === cat;
+          const matchFloor = !floor || item.floor == floor;
+          const matchParking = !parking || item.parking === parking;
+          return matchQ && matchCat && matchFloor && matchParking;
+        });
+        renderRestaurants(filtered);
+      }
+    }
+
+    // COMPONENT RENDERING ENGINES
+    function renderStores(data) {
+      const container = document.getElementById('stores-grid');
+      container.innerHTML = '';
+      
+      if (data.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full text-center py-12 text-slate-400">
+            <i data-lucide="search-code" class="w-10 h-10 mx-auto mb-2 text-slate-350"></i>
+            <p class="text-xs font-semibold">No apparel or retail locations match current workspace filters.</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      data.forEach(item => {
+        const isSaved = BOOKMARKED_STORES.includes(item.id);
+        const bMarkClass = isSaved ? 'text-rose-500 fill-rose-500 hover:fill-none' : 'text-slate-400 hover:text-rose-500';
+        
+        container.innerHTML += `
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-3xl shadow-3xs flex flex-col justify-between transition-all hover:border-slate-300 dark:hover:border-slate-700">
+            <div class="space-y-3.5">
+              <div class="flex justify-between items-center">
+                <span class="w-11 h-11 text-xl rounded-2xl bg-slate-50 dark:bg-slate-950 flex items-center justify-center border border-slate-150 dark:border-slate-800 shadow-inner">
+                  ${item.logo}
+                </span>
+                <button onclick="toggleStoreBookmark('${item.id}', event)" class="p-1 px-1.5 rounded-lg border border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 ${bMarkClass} cursor-pointer transition-colors duration-200">
+                  <i data-lucide="bookmark" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <div>
+                <h4 class="font-display font-medium text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors shrink-0 font-bold block cursor-pointer text-sm" onclick="openDetails('${item.id}', 'store')">
+                  ${item.name}
+                </h4>
+                <div class="flex items-center gap-1 mt-0.5 whitespace-nowrap">
+                  <span class="text-[9px] font-bold text-slate-400 font-mono uppercase">${item.category}</span>
+                  <span class="text-slate-300 dark:text-slate-700 text-xs">•</span>
+                  <span class="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Level ${item.floor}</span>
+                </div>
+              </div>
+
+              <p class="text-xs text-slate-500 dark:text-slate-400 text-justify line-clamp-2">
+                ${item.desc}
+              </p>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-slate-202/60 dark:border-slate-800/80 flex items-center justify-between text-xs">
+              <span class="font-mono text-slate-400 dark:text-slate-500">🅿️ Parking ${item.deck_name}</span>
+              <button onclick="openDetails('${item.id}', 'store')" class="text-[11px] font-extrabold text-indigo-650 dark:text-indigo-400 flex items-center gap-1 hover:underline cursor-pointer">
+                Full Profile <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      });
+      lucide.createIcons();
+    }
+
+    function renderRestaurants(data) {
+      const container = document.getElementById('restaurants-grid');
+      container.innerHTML = '';
+
+      if (data.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full text-center py-12 text-slate-400">
+            <p class="text-xs font-semibold">No casual or fine culinary locations found.</p>
+          </div>
+        `;
+        return;
+      }
+
+      data.forEach(item => {
+        const isSaved = BOOKMARKED_RESTAURANTS.includes(item.id);
+        const bMarkClass = isSaved ? 'text-rose-500 fill-rose-500 hover:fill-none' : 'text-slate-405 hover:text-rose-500';
+
+        container.innerHTML += `
+          <div class="bg-white dark:bg-slate-900 border border-slate-205 dark:border-slate-800 p-5 rounded-3xl shadow-3xs flex flex-col justify-between transition-all hover:border-slate-300 dark:hover:border-slate-700">
+            <div class="space-y-3.5">
+              <div class="flex justify-between items-center">
+                <span class="w-11 h-11 text-xl rounded-2xl bg-slate-50 dark:bg-slate-950 flex items-center justify-center border border-slate-150 dark:border-slate-800 shadow-inner">
+                  ${item.logo}
+                </span>
+                <button onclick="toggleRestaurantBookmark('${item.id}', event)" class="p-1 px-1.5 rounded-lg border border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 ${bMarkClass} cursor-pointer transition-all duration-200">
+                  <i data-lucide="bookmark" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <div>
+                <h4 class="font-display font-medium text-slate-909 dark:text-white hover:text-indigo-650 dark:hover:text-indigo-400 transition-colors font-bold block cursor-pointer text-sm" onclick="openDetails('${item.id}', 'restaurant')">
+                  ${item.name}
+                </h4>
+                <div class="flex items-center gap-1 mt-0.5">
+                  <span class="text-[9px] font-bold text-slate-400 font-mono uppercase">${item.category}</span>
+                  <span class="text-slate-300 dark:text-slate-700 text-xs">•</span>
+                  <span class="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Level ${item.floor}</span>
+                </div>
+              </div>
+
+              <p class="text-xs text-slate-500 dark:text-slate-400 text-justify line-clamp-2">
+                ${item.desc}
+              </p>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-slate-200/50 dark:border-slate-800/80 flex items-center justify-between text-xs">
+              <span class="font-mono text-slate-400 dark:text-slate-500">🅿️ Parking ${item.deck_name}</span>
+              <button onclick="openDetails('${item.id}', 'restaurant')" class="text-[11px] font-extrabold text-indigo-650 dark:text-indigo-400 flex items-center gap-1 hover:underline cursor-pointer">
+                View Vitals <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      });
+      lucide.createIcons();
+    }
+
+    function renderAttractionsTab() {
+      const container = document.getElementById('attractions-container');
+      container.innerHTML = '';
+      
+      ATTRACTIONS_LIST.forEach(item => {
+        container.innerHTML += `
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-3xl hover:shadow-xs transition-shadow duration-200 space-y-4">
+            <div class="flex justify-between items-start gap-4 flex-wrap sm:flex-nowrap">
+              <div class="flex gap-4">
+                <span class="w-12 h-12 text-2xl bg-indigo-50 dark:bg-indigo-950/20 rounded-2xl border border-indigo-100/50 dark:border-indigo-900/40 flex items-center justify-center shrink-0 shadow-inner">
+                  ${item.logo}
+                </span>
+                <div>
+                  <h4 class="font-display font-extrabold text-slate-900 dark:text-white text-base sm:text-lg leading-tight uppercase tracking-wide">
+                    ${item.name}
+                  </h4>
+                  <div class="flex gap-2 flex-wrap text-slate-500 text-xs font-mono mt-1">
+                    <span>${item.location}</span>
+                    <span>•</span>
+                    <span class="font-bold text-indigo-600 dark:text-indigo-400">🅿️ Parking ${item.deck_name}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 text-justify leading-relaxed">
+              ${item.desc}
+            </p>
+
+            <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs flex-wrap gap-2">
+              <span class="bg-slate-50 dark:bg-slate-950 border dark:border-slate-800 px-3 py-1 rounded-xl font-bold font-mono text-slate-500">
+                ⭐ Capacity Vitals: ${item.vitals}
+              </span>
+              <span class="text-indigo-700 dark:text-indigo-400 font-extrabold uppercase font-mono tracking-widest text-[10px]">
+                Target: ${item.audience}
+              </span>
+            </div>
+          </div>
+        `;
+      });
+      lucide.createIcons();
+    }
+
+    // DATA MUTATION SYSTEM
+    function toggleStoreBookmark(storeId, event) {
+      if(event) event.stopPropagation();
+      const idx = BOOKMARKED_STORES.indexOf(storeId);
+      if (idx > -1) {
+        BOOKMARKED_STORES.splice(idx, 1);
+      } else {
+        BOOKMARKED_STORES.push(storeId);
+      }
+      localStorage.setItem('bookmarked_stores', JSON.stringify(BOOKMARKED_STORES));
+      updateSavedBadgeCount();
+      
+      if (CURRENT_TAB === 'stores') executeSearchAndFilters();
+      if (CURRENT_TAB === 'saved') renderSavedTab();
+    }
+
+    function toggleRestaurantBookmark(restId, event) {
+      if(event) event.stopPropagation();
+      const idx = BOOKMARKED_RESTAURANTS.indexOf(restId);
+      if (idx > -1) {
+        BOOKMARKED_RESTAURANTS.splice(idx, 1);
+      } else {
+        BOOKMARKED_RESTAURANTS.push(restId);
+      }
+      localStorage.setItem('bookmarked_restaurants', JSON.stringify(BOOKMARKED_RESTAURANTS));
+      updateSavedBadgeCount();
+      
+      if (CURRENT_TAB === 'restaurants') executeSearchAndFilters();
+      if (CURRENT_TAB === 'saved') renderSavedTab();
+    }
+
+    function updateSavedBadgeCount() {
+      const tot = BOOKMARKED_STORES.length + BOOKMARKED_RESTAURANTS.length;
+      document.getElementById('saved-badge').innerText = tot;
+    }
+
+    // SAVED TAB CONTROLLER
+    function renderSavedTab() {
+      const listsContainer = document.getElementById('saved-lists-container');
+      const emptyState = document.getElementById('saved-empty-state');
+      const advisor = document.getElementById('saved-parking-advisor');
+      
+      const savedStores = STORES_LIST.filter(item => BOOKMARKED_STORES.includes(item.id));
+      const savedRests = RESTAURANTS_LIST.filter(item => BOOKMARKED_RESTAURANTS.includes(item.id));
+
+      if (savedStores.length === 0 && savedRests.length === 0) {
+        listsContainer.classList.add('hidden');
+        advisor.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      listsContainer.classList.remove('hidden');
+      advisor.classList.remove('hidden');
+
+      // OPTIMAL PARKING CALCULATOR ALGORITHM (Independent core formula)
+      const deckFreq = {};
+      [...savedStores, ...savedRests].forEach(node => {
+        deckFreq[node.deck_name] = (deckFreq[node.deck_name] || 0) + 1;
+      });
+      let bestDeck = 'Deck B (Family Express)';
+      let maxCount = 0;
+      Object.keys(deckFreq).forEach(deck => {
+        if(deckFreq[deck] > maxCount) {
+          maxCount = deckFreq[deck];
+          bestDeck = deck;
+        }
+      });
+      document.getElementById('calculated-parking-deck').innerText = bestDeck;
+
+      // Render separate lists columns
+      listsContainer.innerHTML = `
+        <!-- Stores Column -->
+        <div class="bg-slate-50/50 dark:bg-slate-950/20 border border-slate-200 dark:border-slate-800 rounded-2xl p-6">
+          <h5 class="text-xs uppercase font-bold tracking-widest text-slate-400 mb-4 pb-2 border-b border-slate-200 dark:border-slate-800 flex justify-between">
+            <span>🏬 Saved Shops (${savedStores.length})</span>
+          </h5>
+          <div class="space-y-3" id="saved-stores-sub-list"></div>
+        </div>
+
+        <!-- Dining Column -->
+        <div class="bg-slate-50/50 dark:bg-slate-950/20 border border-slate-200 dark:border-slate-800 rounded-2xl p-6">
+          <h5 class="text-xs uppercase font-bold tracking-widest text-slate-400 mb-4 pb-2 border-b border-slate-200 dark:border-slate-800 flex justify-between">
+            <span>🍲 Saved Dining (${savedRests.length})</span>
+          </h5>
+          <div class="space-y-3" id="saved-rests-sub-list"></div>
+        </div>
+      `;
+
+      const storesSubList = document.getElementById('saved-stores-sub-list');
+      if (savedStores.length === 0) {
+        storesSubList.innerHTML = '<p class="text-xs text-slate-400 italic">No saved retail stores.</p>';
+      } else {
+        savedStores.forEach(item => {
+          storesSubList.innerHTML += `
+            <div class="bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-800 px-4 py-3 rounded-2xl flex justify-between items-center hover:shadow-3xs group transition-shadow">
+              <div class="flex items-center gap-3">
+                <span class="text-xl shrink-0">${item.logo}</span>
+                <div>
+                  <h6 class="font-bold text-xs cursor-pointer text-slate-900 dark:text-white group-hover:text-indigo-650" onclick="openDetails('${item.id}', 'store')">${item.name}</h6>
+                  <span class="text-[10px] text-slate-400 font-mono">${item.location} • ${item.deck_name}</span>
+                </div>
+              </div>
+              <button onclick="toggleStoreBookmark('${item.id}')" class="p-1 rounded text-red-500 hover:bg-red-50 dark:hover:bg-red-950/20 border border-slate-100 dark:border-slate-800 cursor-pointer">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          `;
+        });
+      }
+
+      const restsSubList = document.getElementById('saved-rests-sub-list');
+      if (savedRests.length === 0) {
+        restsSubList.innerHTML = '<p class="text-xs text-slate-400 italic">No saved dining locations.</p>';
+      } else {
+        savedRests.forEach(item => {
+          restsSubList.innerHTML += `
+            <div class="bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-800 px-4 py-3 rounded-2xl flex justify-between items-center hover:shadow-3xs group transition-shadow">
+              <div class="flex items-center gap-3">
+                <span class="text-xl shrink-0">${item.logo}</span>
+                <div>
+                  <h6 class="font-bold text-xs cursor-pointer text-slate-900 dark:text-white group-hover:text-indigo-650" onclick="openDetails('${item.id}', 'restaurant')">${item.name}</h6>
+                  <span class="text-[10px] text-slate-400 font-mono">${item.location} • ${item.deck_name}</span>
+                </div>
+              </div>
+              <button onclick="toggleRestaurantBookmark('${item.id}')" class="p-1 rounded text-red-500 hover:bg-red-50 dark:hover:bg-red-950/20 border border-slate-100 dark:border-slate-800 cursor-pointer">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          `;
+        });
+      }
+      lucide.createIcons();
+    }
+
+    // MODAL WINDOW DETAILS MANAGER
+    function openDetails(itemId, type) {
+      let node = null;
+      if (type === 'store') {
+        node = STORES_LIST.find(x => x.id === itemId);
+      } else if (type === 'restaurant') {
+        node = RESTAURANTS_LIST.find(x => x.id === itemId);
+      }
+
+      if(!node) return;
+
+      document.getElementById('modal-logo').innerText = node.logo;
+      document.getElementById('modal-title').innerText = node.name;
+      document.getElementById('modal-subtitle').innerText = node.category;
+      document.getElementById('modal-desc').innerText = node.desc;
+      document.getElementById('modal-location').innerText = node.location;
+      document.getElementById('modal-parking').innerText = node.deck_name;
+      document.getElementById('modal-hours').innerText = node.hours;
+
+      const featureList = document.getElementById('modal-features-list');
+      featureList.innerHTML = '';
+      node.products.forEach(p => {
+        featureList.innerHTML += `<span class="bg-slate-100 dark:bg-slate-800 border dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg px-2.5 py-1 text-[11px] font-semibold">${p}</span>`;
+      });
+
+      // Manage bookmark state within Modal
+      const bBtn = document.getElementById('modal-bookmark-btn');
+      const isSaved = type === 'store' ? BOOKMARKED_STORES.includes(node.id) : BOOKMARKED_RESTAURANTS.includes(node.id);
+      
+      if (isSaved) {
+        bBtn.innerHTML = `<i data-lucide="bookmark" class="w-3.5 h-3.5 text-rose-350 fill-rose-350"></i> Remove Bookmark`;
+        bBtn.classList.remove('bg-indigo-600', 'hover:bg-indigo-705');
+        bBtn.classList.add('bg-rose-600', 'hover:bg-rose-700');
+        bBtn.onclick = () => {
+          if (type === 'store') toggleStoreBookmark(node.id);
+          else toggleRestaurantBookmark(node.id);
+          openDetails(node.id, type); // reload button state
+        };
+      } else {
+        bBtn.innerHTML = `<i data-lucide="bookmark" class="w-3.5 h-3.5"></i> Save Bookmark`;
+        bBtn.classList.remove('bg-rose-600', 'hover:bg-rose-700');
+        bBtn.classList.add('bg-indigo-600', 'hover:bg-indigo-705');
+        bBtn.onclick = () => {
+          if (type === 'store') toggleStoreBookmark(node.id);
+          else toggleRestaurantBookmark(node.id);
+          openDetails(node.id, type); // reload button state
+        };
+      }
+
+      document.getElementById('details-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      document.getElementById('details-modal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "American Dream Navigator",
+  "description": "The ultimate planning, navigation, and visitor intelligence platform for the American Dream Mall.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

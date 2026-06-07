@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | American Dream Guide Help & Support</title>
+  <meta name="description" content="Reach out to the American Dream Directory Support team. Report dynamic directory updates, request business inclusions, or seek navigation help.">
+  <link rel="canonical" href="https://americandreamguide.com/contact">
+  
+  <!-- SEO JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://americandreamguide.com/contact#webpage",
+        "url": "https://americandreamguide.com/contact",
+        "name": "Contact Us | American Dream Guide Help & Support",
+        "description": "Reach out to the American Dream Directory Support team. Report dynamic directory updates, request business inclusions, or seek navigation help.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://americandreamguide.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contact Us",
+              "item": "https://americandreamguide.com/contact"
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Prevent dark mode flash -->
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-250">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-900 transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 rounded-xl bg-indigo-650 text-white flex items-center justify-center font-display font-bold text-xl shadow-md shadow-indigo-200 dark:shadow-none transition-all">
+          A
+        </div>
+        <div>
+          <h1 class="font-display font-medium text-base sm:text-lg text-slate-900 dark:text-white leading-none font-bold">
+            American Dream
+          </h1>
+          <span class="text-[10px] font-mono tracking-widest text-indigo-600 dark:text-indigo-400 font-bold uppercase">
+            INDEPENDENT WAYFINDER
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation & Controls -->
+      <div class="flex items-center gap-4 sm:gap-6">
+        <nav class="hidden md:flex items-center gap-2">
+          <a href="index.html" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+            Planner
+          </a>
+          <a href="about.html" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+            About Us
+          </a>
+          <a href="contact.html" class="px-3.5 py-2 text-xs font-bold rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white transition-all">
+            Contact
+          </a>
+          <a href="terms.html" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+            Terms
+          </a>
+          <a href="privacy.html" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+            Privacy
+          </a>
+        </nav>
+
+        <span class="h-6 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></span>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-600 dark:text-slate-350 transition-all cursor-pointer shadow-xs">
+          <i data-lucide="moon" class="w-4 h-4 dark:hidden text-indigo-600"></i>
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+        </button>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-600 dark:text-slate-350 transition-all cursor-pointer">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu-drawer" class="hidden md:hidden border-t border-slate-200 dark:border-slate-900 bg-white dark:bg-slate-950 p-4 space-y-2">
+      <a href="index.html" class="block px-4 py-2 text-xs font-medium text-slate-605 dark:text-slate-400 rounded-xl">Planner</a>
+      <a href="about.html" class="block px-4 py-2 text-xs font-medium text-slate-605 dark:text-slate-400 rounded-xl">About Us</a>
+      <a href="contact.html" class="block px-4 py-2 text-xs font-bold text-slate-900 dark:text-white bg-slate-50 dark:bg-slate-900 rounded-xl">Contact Us</a>
+      <a href="terms.html" class="block px-4 py-2 text-xs font-medium text-slate-605 dark:text-slate-404 rounded-xl">Terms & Conditions</a>
+      <a href="privacy.html" class="block px-4 py-2 text-xs font-medium text-slate-605 dark:text-slate-404 rounded-xl">Privacy Policy</a>
+    </div>
+  </header>
+
+  <!-- CORE CONTACT CONTAINER -->
+  <main class="flex-grow max-w-5xl mx-auto px-4 py-10 sm:py-16 w-full animate-fade-in">
+    
+    <div class="text-center mb-10 max-w-2xl mx-auto space-y-2">
+      <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 font-mono tracking-widest uppercase block">Support Terminal</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-display">Let&apos;s Refine Your Experience</h2>
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+        Have questions about levels, find a spacing typo in our database coordinates, or representing a brand and want an edit? Our support team addresses reports promptly.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Forms Column -->
+      <div class="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-205 dark:border-slate-850 p-6 sm:p-10 rounded-3xl shadow-sm">
+        
+        <!-- Interactive Contact Alert System -->
+        <div id="contact-alert" class="hidden mb-6 p-4 rounded-2xl border flex items-center gap-3 animate-fade-in">
+          <span id="alert-emo" class="text-xl"></span>
+          <p id="alert-txt" class="text-xs sm:text-sm font-semibold"></p>
+        </div>
+
+        <form id="contact-form" onsubmit="handleFormSubmission(event)" class="space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-1.5 font-mono">Your Name</label>
+              <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600" placeholder="e.g. Robin Banks">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-1.5 font-mono">Mail Coordinates</label>
+              <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-955 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600" placeholder="e.g. robin@example.com">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-1.5 font-mono">Inquiry Topic</label>
+            <select id="reason" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-indigo-600 cursor-pointer">
+              <option value="data-update">Report a Directory Update / Typo</option>
+              <option value="business-listing">Business Inclusion Request</option>
+              <option value="support">General Navigation Assistance</option>
+              <option value="feedback">Helpful Feedback &amp; Suggestions</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-1.5 font-mono">Message Scope</label>
+            <textarea id="message" required rows="5" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600" placeholder="Detail your exact findings or request scope clearly write here..."></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3 bg-indigo-605 text-white font-extrabold text-xs tracking-wider uppercase rounded-xl hover:bg-indigo-705 transition-all shadow-sm active:scale-98 cursor-pointer bg-indigo-600">
+            Transmit Signal to Desk
+          </button>
+        </form>
+      </div>
+
+      <!-- Right Contact Metadata Vitals Column -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <div class="bg-indigo-50/50 dark:bg-slate-900 border border-indigo-200/50 dark:border-slate-800 p-6 sm:p-8 rounded-3xl space-y-6">
+          <h4 class="font-display font-extrabold text-base text-slate-900 dark:text-white">Expert Direct Support</h4>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed text-justify">
+            For major corporate listings or official marketing partnerships, please target direct support queues. We respect GDPR alignments completely.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-950/40 text-indigo-650 dark:text-indigo-400 flex items-center justify-center text-lg">✉️</span>
+              <div>
+                <span class="text-[9px] uppercase font-bold text-slate-400 font-mono block">Primary Queue</span>
+                <span class="text-xs font-bold text-slate-700 dark:text-slate-350">support@americandreamguide.com</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-950/40 text-indigo-650 dark:text-indigo-400 flex items-center justify-center text-lg">⌚</span>
+              <div>
+                <span class="text-[9px] uppercase font-bold text-slate-400 font-mono block">Response Metric</span>
+                <span class="text-xs font-bold text-slate-700 dark:text-slate-350">Typically under 24 business hours</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-950/40 text-indigo-650 dark:text-indigo-400 flex items-center justify-center text-lg">🗺️</span>
+              <div>
+                <span class="text-[9px] uppercase font-bold text-slate-400 font-mono block">Physical Ground</span>
+                <span class="text-xs font-bold text-slate-700 dark:text-slate-355">East Rutherford, New Jersey</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 bg-amber-50 dark:bg-slate-950 border border-amber-200/50 dark:border-amber-900/30 rounded-xl text-[11px] text-amber-900 dark:text-amber-400 leading-relaxed text-justify">
+            <strong>❌ DISCLAIMER:</strong> This is a completely <em>independent trip guide</em>. We do not maintain any direct legal relationship with American Dream Mall ownership or the Triple Five Group. For security emergencies, park closures, or lost cards, contact mall security desks directly.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white dark:bg-slate-950 border-t border-slate-205 dark:border-slate-900 py-12 px-4 transition-colors duration-250 mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+      
+      <div class="md:col-span-5 space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-indigo-650 text-white flex items-center justify-center font-display font-black">A</div>
+          <span class="font-display font-bold text-base text-slate-900 dark:text-white">American Dream Digital Guide</span>
+        </div>
+        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed text-justify">
+          The smarter independent wayfinder and trip planner for American Dream Mall visitors. Curating floor coordinates, parking vital tips, and local dining arrays with pristine precision.
+        </p>
+      </div>
+
+      <div class="md:col-span-3 space-y-3">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-400 font-mono">Directory Access</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-650 hover:underline">Interactive Planner</a></li>
+          <li><a href="about.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-650 hover:underline">Our Mission Roots</a></li>
+          <li><a href="contact.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-655 hover:underline">Support Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-4 space-y-3">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-400 font-mono">Legal Guidelines</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="terms.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-605 hover:underline">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="text-slate-600 dark:text-slate-355 hover:text-indigo-605 hover:underline">Privacy Policy (GPDR compliant)</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto border-t border-slate-100 dark:border-slate-900 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-400 dark:text-slate-500">
+      <p>&copy; 2026 American Dream Digital Guide. Authored independently. Independent travel publication.</p>
+      <div class="flex gap-4">
+        <span>Designed with Inter UI font</span>
+        <span>Mapped with Lucide Vectors</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FORM CONTROLLER ALGORITHM
+    function handleFormSubmission(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const reason = document.getElementById('reason').value;
+      const message = document.getElementById('message').value;
+
+      const alertBox = document.getElementById('contact-alert');
+      const alertEmo = document.getElementById('alert-emo');
+      const alertTxt = document.getElementById('alert-txt');
+
+      alertBox.className = "mb-6 p-4 rounded-2xl border flex items-center gap-3 animate-fade-in"; // Clean class state
+
+      if (!name || !email || !message) {
+        alertBox.classList.add("bg-red-50", "border-red-200", "text-red-800", "dark:bg-red-950/20", "dark:border-red-900/30", "dark:text-red-400");
+        alertEmo.innerText = "❌";
+        alertTxt.innerText = "Execution failed. All form elements are required.";
+        alertBox.classList.remove('hidden');
+        return;
+      }
+
+      // Success sequence simulation (completely localized, robust)
+      alertBox.classList.add("bg-emerald-50", "border-emerald-200", "text-emerald-800", "dark:bg-emerald-950/20", "dark:border-emerald-900/30", "dark:text-emerald-400");
+      alertEmo.innerText = "🚀";
+      alertTxt.innerHTML = `Message transmitted successfully! Thank you <strong>${name}</strong>. Your coordinate update has been dispatched under priority ticket.`;
+      alertBox.classList.remove('hidden');
+
+      // Reset form variables
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+    }
+
+    // Theme logic
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+      }
+    });
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-menu-drawer');
+    mobileBtn.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('hidden');
+    });
+
+    // Load Lucide Icons
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

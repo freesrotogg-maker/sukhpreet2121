@@ -1,0 +1,12 @@
+# Global Web Crawlers
+User-agent: *
+Allow: /
+
+# Disallow Rules to Protect Crawl Budget & Prevent Indexation Bloat
+Disallow: /admin/
+Disallow: /api/
+Disallow: /404/
+Disallow: /500/
+
+# Absolute XML Sitemap Location Link
+Sitemap: https://americandreamguide.com/sitemap.xml

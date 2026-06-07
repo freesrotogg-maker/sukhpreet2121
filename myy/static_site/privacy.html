@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | American Dream Guide</title>
+  <meta name="description" content="Review our GDPR-compliant privacy policy. Learn how our independent American Dream wayfinding site preserves your data using localized storage state caches.">
+  <link rel="canonical" href="https://americandreamguide.com/privacy">
+  
+  <!-- SEO JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://americandreamguide.com/privacy#webpage",
+        "url": "https://americandreamguide.com/privacy",
+        "name": "Privacy Policy | American Dream Guide",
+        "description": "Review our GDPR-compliant privacy policy. Learn how our independent American Dream wayfinding site preserves your data using localized storage state caches.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://americandreamguide.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Privacy Policy",
+              "item": "https://americandreamguide.com/privacy"
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Prevent dark mode flash -->
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-955 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-250">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-white/80 dark:bg-slate-955/80 backdrop-blur-md border-b border-slate-205 dark:border-slate-900 transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 rounded-xl bg-indigo-650 text-white flex items-center justify-center font-display font-bold text-xl shadow-md shadow-indigo-200 dark:shadow-none transition-all">
+          A
+        </div>
+        <div>
+          <h1 class="font-display font-medium text-base sm:text-lg text-slate-900 dark:text-white leading-none font-bold">
+            American Dream
+          </h1>
+          <span class="text-[10px] font-mono tracking-widest text-indigo-600 dark:text-indigo-400 font-bold uppercase">
+            INDEPENDENT WAYFINDER
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation & Controls -->
+      <div class="flex items-center gap-4 sm:gap-6">
+        <nav class="hidden md:flex items-center gap-2">
+          <a href="index.html" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+            Planner
+          </a>
+          <a href="about.html" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+            About Us
+          </a>
+          <a href="contact.html" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-905 dark:hover:text-white transition-all">
+            Contact
+          </a>
+          <a href="terms.html" class="px-3.5 py-2 text-xs font-semibold rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-905 dark:hover:text-white transition-all">
+            Terms
+          </a>
+          <a href="privacy.html" class="px-3.5 py-2 text-xs font-bold rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white transition-all">
+            Privacy
+          </a>
+        </nav>
+
+        <span class="h-6 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></span>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-600 dark:text-slate-350 transition-all cursor-pointer shadow-xs">
+          <i data-lucide="moon" class="w-4 h-4 dark:hidden text-indigo-600"></i>
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+        </button>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-600 dark:text-slate-355 transition-all cursor-pointer">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu-drawer" class="hidden md:hidden border-t border-slate-200 dark:border-slate-900 bg-white dark:bg-slate-955 p-4 space-y-2">
+      <a href="index.html" class="block px-4 py-2 text-xs font-medium text-slate-605 dark:text-slate-400 rounded-xl">Planner</a>
+      <a href="about.html" class="block px-4 py-2 text-xs font-medium text-slate-605 dark:text-slate-400 rounded-xl">About Us</a>
+      <a href="contact.html" class="block px-4 py-2 text-xs font-medium text-slate-605 dark:text-slate-400 rounded-xl">Contact Us</a>
+      <a href="terms.html" class="block px-4 py-2 text-xs font-medium text-slate-605 dark:text-slate-404 rounded-xl">Terms & Conditions</a>
+      <a href="privacy.html" class="block px-4 py-2 text-xs font-bold text-slate-909 dark:text-white bg-slate-50 dark:bg-slate-900 rounded-xl">Privacy Policy</a>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="flex-grow max-w-4xl mx-auto px-4 py-10 sm:py-16 w-full animate-fade-in text-slate-800 dark:text-slate-100">
+    <div class="text-center mb-10 max-w-2xl mx-auto space-y-2">
+      <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 font-mono tracking-widest uppercase block">Trust Portal</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white font-display">Privacy Policy</h2>
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Effective Date: June 7, 2026. Learn how we prioritize GDPR-compliant data security.</p>
+    </div>
+
+    <div class="bg-white dark:bg-slate-900 border border-slate-205 dark:border-slate-850 rounded-3xl p-6 sm:p-12 shadow-sm space-y-6 text-sm text-slate-655 dark:text-slate-350 leading-relaxed text-justify">
+      
+      <section class="space-y-3">
+        <h3 class="font-display font-bold text-slate-900 dark:text-white text-base sm:text-lg">1. Zero Database Collection Policy</h3>
+        <p>
+          We strongly believe in complete consumer anonymity. Our Site maintains <strong>absolutely NO server-side databases, login authentication sequences, or active user profiling trackers</strong>. Any items, retail stores, or attraction schedules that you bookmark inside our wayfinding planner are processed exclusively inside your browser’s local client-side memory (standard <code>localStorage</code> cache indices). We never transmit, share, or store this structural data outwards.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h3 class="font-display font-bold text-slate-900 dark:text-white text-base sm:text-lg">2. Support Mail Metrics</h3>
+        <p>
+          If you send support inquiries using our physical contact desk form, the name, email, and inquiry variables are compiled solely to address issues relative to database correction lists or business inclusion proposals. These messages are processed inside highly secure corporate email gateways and are deleted cleanly after 90 days of complete issue resolution. We never sell contact information under any circumstances.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h3 class="font-display font-bold text-slate-900 dark:text-white text-base sm:text-lg">3. Web Analytical Counters</h3>
+        <p>
+          To monitor high-level traffic scaling structures and optimize speed performances, the Site may utilize lightweight, anonymous click metrics (e.g., standard Google Analytics). These tools record simple geolocation indexes, timing intervals, and landing pathways without extracting any direct personally identifiable information (PII).
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h3 class="font-display font-bold text-slate-900 dark:text-white text-base sm:text-lg">4. Rights of International Users (GDPR)</h3>
+        <p>
+          In full accordance with GDPR and CCPA compliance directives, visitors hold comprehensive rights over their data. Because we record zero remote metrics, you have total control over deleting your saved map coordinates at any time by simply clicking the "Trash" controls inside the Saved Directory Matrix, or clearing your cookies.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white dark:bg-slate-950 border-t border-slate-205 dark:border-slate-900 py-12 px-4 transition-colors duration-250 mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+      
+      <div class="md:col-span-5 space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-indigo-650 text-white flex items-center justify-center font-display font-black">A</div>
+          <span class="font-display font-bold text-base text-slate-900 dark:text-white">American Dream Digital Guide</span>
+        </div>
+        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed text-justify">
+          The smarter independent wayfinder and trip planner for American Dream Mall visitors. Curating floor coordinates, parking vital tips, and local dining arrays with pristine precision.
+        </p>
+      </div>
+
+      <div class="md:col-span-3 space-y-3">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-405 font-mono">Directory Access</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-650 hover:underline">Interactive Planner</a></li>
+          <li><a href="about.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-650 hover:underline">Our Mission Roots</a></li>
+          <li><a href="contact.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-655 hover:underline">Support Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-4 space-y-3">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-405 font-mono">Legal Guidelines</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="terms.html" class="text-slate-600 dark:text-slate-350 hover:text-indigo-605 hover:underline">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="text-slate-600 dark:text-slate-355 hover:text-indigo-605 hover:underline font-bold">Privacy Policy (GPDR compliant)</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto border-t border-slate-100 dark:border-slate-900 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-400 dark:text-slate-500">
+      <p>&copy; 2026 American Dream Digital Guide. Authored independently. Independent travel publication.</p>
+      <div class="flex gap-4">
+        <span>Designed with Inter UI font</span>
+        <span>Mapped with Lucide Vectors</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+      }
+    });
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-menu-drawer');
+    mobileBtn.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('hidden');
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
